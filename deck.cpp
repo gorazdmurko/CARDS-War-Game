@@ -44,7 +44,7 @@ void Deck::setupCards() {
 void Deck::printAllCards() {
 	for (int col = (int)Suits::CLUBS; col <= (int)Suits::SPADES; col++) {
 		for (int row = (int)Ranks::TWO; row <= (int)Ranks::ACE; row++) {
-			int index = (col * 10) + row - 2;
+			int index = (col * 13) + row - 2;
 			vCard[index].printCard();
 		}
 		std::cout << std::endl;

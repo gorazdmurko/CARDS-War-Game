@@ -17,14 +17,14 @@ void Game::deal() {
 	std::cout << "\n------------------------------------------------------------------------------\n";
 
 	// deal to player 1
-	for (int i = 0; i < 40; i++) {
+	for (int i = 0; i < deck.vCard.size(); i++) {
 		if (i % 2 == 0) {
 			Card card = deck.vCard[i];;
 			player_1.pCards.push_back(card);
 		}
 	}
 	// deal to player 2
-	for (int i = 0; i < 40; i++) {
+	for (int i = 0; i < deck.vCard.size(); i++) {
 		if (i % 2 != 0) {
 			Card card = deck.vCard[i];
 			player_2.pCards.push_back(card);
@@ -74,6 +74,7 @@ void Game::startGame() {
 			}
 			break;
 		}
+
 
 		SetConsoleTextAttribute(color, 2);
 		std::cout << "\n\n  - ROUND " << round << " -\n\n";
@@ -202,14 +203,15 @@ int Game::sameValuesCase(Card& c1, Card& c2, std::vector<Card> deck1, std::vecto
 		std::cout << "\n	" << player_2.getName() << " puts all of the cards from this round into its own deck." << std::endl;
 		std::cout << "  " << player_2.getName() << " is a winner of " << round << ". round" << std::endl;
 		for (int i = 0; i < tempDeck_2.size(); i++) {
-			player_2.pCards.push_back(tempDeck_1[i]);
 			player_2.pCards.push_back(tempDeck_2[i]);
+			player_2.pCards.push_back(tempDeck_1[i]);
 		}
 		// reassign temp arrays to its innitial values
 		tempDeck_1 = {};
 		tempDeck_2 = {};
 	}
 	else {
+		// have to pop_back last card from temp array because it is pushed-in again in next recursive call (lastCard_1, lastCard_2)
 		tempDeck_1.pop_back();
 		tempDeck_2.pop_back();
 		sameValuesCase(lastCard_1, lastCard_2, tempDeck_1, tempDeck_2);
