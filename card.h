@@ -21,8 +21,10 @@ enum Ranks {
 };
 
 class Card {
+private:
+	std::string name = getCardName();
 public:
-	Ranks name;
+	Ranks rank;
 	Suits suit;
 	int value;
 
@@ -40,7 +42,7 @@ public:
 	 * @brief prints out card's name coupled by its value
 	 *
 	 */
-	void printCard();
+	void printCardName();
 
 	std::string getCardName();
 };

@@ -41,7 +41,7 @@ void Game::deal() {
 void Game::printPlayersCards(Player& p) {
 	std::cout << "\n\n\n" << p.getName() << " GETS:\n\n";
 	for (int i = 0; i < p.pCards.size(); i++) {
-		p.pCards[i].printCard();
+		p.pCards[i].printCardName();
 
 		/*i < 10 ? std::cout << " " << i << ")  " << p.pCards[i].getCardName()
 			   : std::cout << i << ")  " << p.pCards[i].getCardName();*/
