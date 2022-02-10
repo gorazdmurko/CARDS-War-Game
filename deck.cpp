@@ -18,22 +18,23 @@ void Deck::setupCards() {
 		for (int row = (int)Ranks::TWO; row <= (int)Ranks::ACE; row++) {
 			Card card;
 			card.suit = (Suits)col;
-			card.name = (Ranks)row;
+			card.rank = (Ranks)row;
+			//card.value = (int)row;
 
-			if (card.name == Ranks::JACK) {
+			if (card.rank == Ranks::JACK) {
 				card.value = 11;
 			}
-			else if (card.name == Ranks::QUEEN) {
+			else if (card.rank == Ranks::QUEEN) {
 				card.value = 12;
 			}
-			else if (card.name == Ranks::KING) {
+			else if (card.rank == Ranks::KING) {
 				card.value = 13;
 			}
-			else if (card.name == Ranks::ACE) {
+			else if (card.rank == Ranks::ACE) {
 				card.value = 14;
 			}
 			else {
-				card.value = (int)card.name;
+				card.value = (int)card.rank;
 			}
 
 			vCard.push_back(card);

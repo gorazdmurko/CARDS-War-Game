@@ -73,7 +73,7 @@ std::string Card::getValue() {
 	return cardValue;
 }
 
-void Card::printCard() {
+void Card::printCardName() {
 	printValue();
 	std::cout << " of ";
 	printSuit();
