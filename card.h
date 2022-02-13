@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 
 enum Suits { CLUBS, DIAMONDS, HEARDS, SPADES };
