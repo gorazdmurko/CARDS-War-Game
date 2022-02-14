@@ -1,5 +1,6 @@
-#include <iostream>
+
 #include "Card.h"
+
 
 Card::Card() {};
 
@@ -19,16 +20,16 @@ void Card::printSuit() {
 }
 
 void Card::printValue() {
-	if (name == Ranks::JACK) {
+	if (rank == Ranks::JACK) {
 		std::cout << "JACK";
 	}
-	else if (name == Ranks::QUEEN) {
+	else if (rank == Ranks::QUEEN) {
 		std::cout << "QUEEN";
 	}
-	else if (name == Ranks::KING) {
+	else if (rank == Ranks::KING) {
 		std::cout << "KING";
 	}
-	else if (name == Ranks::ACE) {
+	else if (rank == Ranks::ACE) {
 		std::cout << "ACE";
 	}
 	else {
@@ -55,16 +56,16 @@ std::string Card::getSuit() {
 
 std::string Card::getValue() {
 	std::string cardValue;
-	if (name == Ranks::JACK) {
+	if (rank == Ranks::JACK) {
 		cardValue = "JACK";
 	}
-	else if (name == Ranks::QUEEN) {
+	else if (rank == Ranks::QUEEN) {
 		cardValue = "QUEEN";
 	}
-	else if (name == Ranks::KING) {
+	else if (rank == Ranks::KING) {
 		cardValue = "KING";
 	}
-	else if (name == Ranks::ACE) {
+	else if (rank == Ranks::ACE) {
 		cardValue = "ACE";
 	}
 	else {
